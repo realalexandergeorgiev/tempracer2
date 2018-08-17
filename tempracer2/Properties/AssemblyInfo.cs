@@ -6,12 +6,12 @@ using System.Runtime.InteropServices;
 // Attribute gesteuert. Ändern Sie diese Attributwerte, um die Informationen zu ändern,
 // die einer Assembly zugeordnet sind.
 [assembly: AssemblyTitle("tempracer2")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Race Condition finder")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Alexander Georgiev")]
 [assembly: AssemblyProduct("tempracer2")]
-[assembly: AssemblyCopyright("Copyright ©  2018")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCopyright("")]
+[assembly: AssemblyTrademark("https://github.com/realalexandergeorgiev/tempracer2")]
 [assembly: AssemblyCulture("")]
 
 // Durch Festlegen von ComVisible auf FALSE werden die Typen in dieser Assembly
