@@ -39,16 +39,26 @@ namespace TempRacer
         {
             string[] args = System.Environment.GetCommandLineArgs();
 
-            // If a directory is not specified, exit program. 
+            // If no directory is specified, exit program. 
             if (args.Length <= 2)
             {
                 // Display the proper way to call the program.
-                Console.WriteLine("Usage: tempracer2.exe <directory> <file/filter>" + Environment.NewLine);
+                Console.WriteLine("Usage: tempracer2.exe <directory> <file/filter> [debug level]" + Environment.NewLine);
+                Console.WriteLine("");
+                Console.WriteLine("Debug levels:");
+                Console.WriteLine("0: only files not owned by us, writeable and .bat/.vbs/.exe/.ps1/.py extension");
+                Console.WriteLine("1: only files not owned by us, writeable(default)");
+                Console.WriteLine("2: writeable files, any owner");
+                Console.WriteLine("3: only files not owned by us");
+                Console.WriteLine("4: every single file");
+                Console.WriteLine("");
                 Console.WriteLine("Example 1 (watching everything in C:\\): tempracer2.exe C:\\ *" + Environment.NewLine);
                 Console.WriteLine("Example 2 (watch only in C:\\temp\\ and subfolders for .bat files): tempracer2.exe C:\\Temp\\ *.bat");
+                Console.WriteLine("Example 3 (watching everything in C:\\ with detailed output): tempracer2.exe C:\\ * 4" + Environment.NewLine);
+                Console.WriteLine("Example 4 (watching everything in C:\\ with minimal output): tempracer2.exe C:\\ * 0" + Environment.NewLine);
                 return;
             }
-            if (args.Length == 4) debugLevel = int.Parse(args[3]);
+            if (args.Length == 4) debugLevel = int.Parse(args[3]); // set debug level
 
                 // Create a new FileSystemWatcher and set its properties.
                 FileSystemWatcher watcher = new FileSystemWatcher();
